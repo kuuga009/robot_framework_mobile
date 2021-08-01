@@ -4,8 +4,8 @@ Library    DateTime
 Library    DatabaseLibrary
 
 *** Variables ***
-${INPUT_YEAR}=  ${2039}
-${SELECT_DATE}=  09 March 2039
+${INPUT_YEAR}=  ${2029}
+${SELECT_DATE}=  09 March 2029
 *** Test Cases ***
 Open Test Application For android
     Open Test Application
@@ -67,7 +67,7 @@ Click Date Dark
     Tap     xpath=//android.widget.LinearLayout[android.widget.TextView[@text='Date Light']]
 
 Click Pick Date
-     Wait Until Page Contains Element    id=com.material.components:id/bt_pick      30s
+    Wait Until Page Contains Element    id=com.material.components:id/bt_pick      30s
     Tap      id=com.material.components:id/bt_pick    
 
 
@@ -134,4 +134,4 @@ Click OK Button
     Wait Until Page Contains Element      id=com.material.components:id/result      30s
     ${Date_selected}    Get Text      id=com.material.components:id/result
     log    ${Date_selected}
-    Should Be Equal   ${Date_selected}    March 09, 2039
+    Should Be Equal   ${Date_selected}    March 09, 2029
